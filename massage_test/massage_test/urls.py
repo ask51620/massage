@@ -21,8 +21,8 @@ urlpatterns = [
 ##    url(r'^admin/', admin.site.urls),
 ##    url(r'^webhook/', connect),
 ##    url(r'^\w+', connect),
-    url(r'^.well-known/acme-challenge/xxxxxxxx$', send_ssl_file),
-    url(r'^fb_webhook$', fb_webhook.as_view()),
-    url(r'^certificate$', certificate)
+    url(r'^.massage_test/well-known/acme-challenge/xxxxxxxx$', send_ssl_file),
+    url(r'^massage_test/fb_webhook$', fb_webhook.as_view()),
+    url(r'^massage_test/certificate$', certificate)
     
 ]
