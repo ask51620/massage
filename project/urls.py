@@ -13,13 +13,13 @@ urlpatterns = [
     url(r'^$', index),
     url(r'^health$', health),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^.well-known/acme-challenge/xxxxxxxx$', send_ssl_file),
+    url(r'^fb_webhook$', fb_webhook.as_view()),
+    url(r'^certificate$', certificate),
 ]
 
 if settings.DEBUG:
     import debug_toolbar
     urlpatterns = [
         url(r'^__debug__/', include(debug_toolbar.urls)),
-        url(r'^.well-known/acme-challenge/xxxxxxxx$', send_ssl_file),
-        url(r'^fb_webhook$', fb_webhook.as_view()),
-        url(r'^certificate$', certificate),
     ] + urlpatterns
